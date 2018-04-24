@@ -7,7 +7,7 @@ description = "Example Mac app in rust/GTK+"
 [package.metadata.bundle]
 name = "RustyWidgets"
 identifier = "com.micahflee.rustywidgets"
-icon = ["icon-128x128@2x.icns"]
+icon = ["install/128x128.icns", "install/128x128@2x.icns"]
 version = "0.1.0"
 resources = ["resources/*"]
 copyright = "Copyright (C) Micah Lee 2018"
