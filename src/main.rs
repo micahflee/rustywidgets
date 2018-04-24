@@ -42,12 +42,5 @@ fn main() {
     window.add(&layout);
     window.show_all();
 
-    // When the window is closed, quit
-    window.connect_delete_event(|_, _| {
-        println!("closed window");
-        gtk::main_quit();
-        Inhibit(false)
-    });
-
     gtk::main();
 }
