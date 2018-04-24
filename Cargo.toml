@@ -2,6 +2,17 @@
 name = "rustywidgets"
 version = "0.1.0"
 authors = ["Micah Lee <micah@micahflee.com>"]
+description = "Example Mac app in rust/GTK+"
+
+[package.metadata.bundle]
+name = "RustyWidgets"
+identifier = "com.micahflee.rustywidgets"
+icon = ["icon-128x128@2x.icns"]
+version = "0.1.0"
+resources = ["resources/*"]
+copyright = "Copyright (C) Micah Lee 2018"
+short_description = "Example Mac app in rust/GTK+"
+long_description = "This is an example graphical Mac app written in rust with GTK+."
 
 [dependencies]
 
