@@ -13,8 +13,11 @@ cargo bundle --release
 mkdir -p "$BUNDLE_PATH/Contents/Frameworks"
 LIB_LIST="gtk+3 atk cairo pango gdk-pixbuf glib fribidi libepoxy gettext harfbuzz fontconfig freetype pcre libffi pixman graphite2"
 for LIB in $LIB_LIST; do
-  cp -r /usr/local/opt/$LIB/lib/*.dylib "$BUNDLE_PATH/Contents/Frameworks"
+  cp -a /usr/local/opt/$LIB/lib/*.dylib "$BUNDLE_PATH/Contents/Frameworks"
 done
+
+# Copy other required frameworks
+cp -a /System/Library/Frameworks/ImageIO.framework "$BUNDLE_PATH/Contents/Frameworks"
 
 # Copy in the launch script, and update Info.plist
 cp $DIR/launch.sh $BUNDLE_PATH/Contents/MacOS/launch.sh
