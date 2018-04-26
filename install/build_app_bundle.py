@@ -3,8 +3,7 @@ import os
 import subprocess
 import shutil
 
-# Roughly following: https://vin047.xyz/binaries-to-app-bundle/ (which is down)
-# Google cache version: https://webcache.googleusercontent.com/search?q=cache:OCW5q4AbSAsJ:https://vin047.xyz/binaries-to-app-bundle/+&cd=6&hl=en&ct=clnk&gl=us&client=firefox-b-1-ab
+# Roughly following: https://web.archive.org/web/20180426004302/https://vin047.xyz/binaries-to-app-bundle/
 
 # Build paths
 repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
