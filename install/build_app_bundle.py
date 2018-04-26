@@ -22,7 +22,7 @@ def find_libs(filename, dylibs=[], recursive=True):
     out = subprocess.check_output(['otool', '-L', filename])
     for line in out.split('\n')[1:]:
         dylib = line.strip().split(' ')[0]
-        if dylib.startswith('/usr/local/opt/'):
+        if dylib.startswith('/usr/local/'):
             basename = os.path.basename(dylib)
 
             # Fix reference in binary being checked
@@ -35,13 +35,13 @@ def find_libs(filename, dylibs=[], recursive=True):
                 # Copy dependency, and fix reference to itself
                 dylib_filename = os.path.join(libraries_path, basename)
                 shutil.copyfile(dylib, dylib_filename)
+                os.chmod(dylib_filename, 0o644)
 
                 subprocess.call([
                     'install_name_tool', '-id',
                     "@executable_path/../Libraries/{}".format(basename),
                     os.path.join(libraries_path, basename)
                 ])
-                os.chmod(dylib_filename, 0o444)
 
                 new_dylibs.append(os.path.join(libraries_path, basename))
 
